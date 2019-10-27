@@ -49,3 +49,16 @@ class ninja(character):
         print(f"Ninja Master {self.name} used the power of algorithms to optimize their attacks.  Their damage went up!")
         self.dmg *= 1.75
         self.dmg = round(self.dmg)
+
+# broken easter egg class
+class kitty(character):
+    def __init__(self):
+        super().__init__("Nick Furry", 1000000, 999)
+    
+    def special(self, target):
+        print(f"""
+            Nick Furry purrs and shows his belly for pets. 
+            Awwwww, who could fight a kitty that cuuuute!
+            {target.name} forfeits!
+        """)
+        target.health = -1000000

@@ -1,4 +1,4 @@
-from fighter import character, jedi, wizard, ninja
+from fighter import character, jedi, wizard, ninja, kitty
 
 ###################################### AVAILABLE CHARACTERS SETUP #
 # JEDIS #
@@ -16,6 +16,9 @@ tonks = wizard("Tonks")
 george = ninja("George")
 cody = ninja("Cody")
 bryanna = ninja("Bryanna")
+
+# EASTER EGG #
+nick = kitty()
 
 ###################################################### GAME SETUP #
 game_over = False
@@ -75,6 +78,9 @@ while(not character_selected):
                 They can use their special to buff their future attacks
         """)
         continue
+    if(char_select == "1337"):
+        player = nick
+        break
     # Check to see if input is a number
     if(char_select.isdigit()):
         int_char = int(char_select) 
@@ -128,7 +134,8 @@ while(not game_over):
 
 ####################################################### GAME OVER #
 if(winner):
-    print("""
+    if(char_select != "1337"):
+        print("""
    ____     __   ,-----.      ___    _         .--.      .--..-./`) ,---.   .--. 
    \   \   /  /.'  .-,  '.  .'   |  | |        |  |_     |  |\ .-.')|    \  |  | 
     \  _. /  '/ ,-.|  \ _ \ |   .'  | |        | _( )_   |  |/ `-' \|  ,  \ |  | 
@@ -138,6 +145,30 @@ if(winner):
 |   `-'  /    \ `"/  \  ) / | (_ (_) _)        |  '  /\  `  | |   | |  (_,_)\  | 
  \      /      '. \_/``".'   \ /  . \ /        |    /  \    | |   | |  |    |  | 
   `-..-'         '-----'      ``-'`-''         `---'    `---` '---' '--'    '--' """)
+    else:
+        print("""
+       \`*-.                    
+        )  _`-.                 
+       .  : `. .                
+       : _   '  \               
+       ; *` _.   `*-._          
+       `-.-'          `-.       
+         ;       `       `.     
+         :.       .        \    
+         . \  .   :   .-'   .   
+         '  `+.;  ;  '      :   
+         :  '  |    ;       ;-. 
+         ; '   : :`-:     _.`* ;
+      .*' /  .*' ; .*`- +'  `*' 
+      `*-*   `*-*  `*-*'
+______ _   ___________________ _____ _____ _____ _____ _____ _   _ _ 
+| ___ \ | | | ___ \ ___ \  ___|  ___/  __ \_   _|_   _|  _  | \ | | |
+| |_/ / | | | |_/ / |_/ / |_  | |__ | /  \/ | |   | | | | | |  \| | |
+|  __/| | | |    /|    /|  _| |  __|| |     | |   | | | | | | . ` | |
+| |   | |_| | |\ \| |\ \| |   | |___| \__/\ | |  _| |_\ \_/ / |\  |_|
+\_|    \___/\_| \_\_| \_\_|   \____/ \____/ \_/  \___/ \___/\_| \_(_)
+                                
+        """)
 else:
     print("""          .-.
                       |_:_|
