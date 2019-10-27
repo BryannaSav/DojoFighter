@@ -25,10 +25,10 @@ class jedi(character):
     def special(self, target):
         if(self.special_usedup):
             print("You go to use the force again, but you're tapped out")
-            return
-        print(f"{self.name} used their jedi powers to deal a POWERFUL BLOW. You cannot use this power again")
-        self.special_usedup = True
-        target.health -= self.dmg*2
+        else:
+            print(f"{self.name} used their jedi powers to deal a POWERFUL BLOW. You cannot use this power again")
+            self.special_usedup = True
+            target.health -= self.dmg*2
 
 # mid health, mid dmg, stun special
 class wizard(character):
