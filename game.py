@@ -77,12 +77,11 @@ while(not character_selected):
                 Has high health and low damage.  
                 They can use their special to buff their future attacks
         """)
-        continue
-    if(char_select == "1337"):
+    elif(char_select == "1337"):
         player = nick
-        break
+        character_selected = True
     # Check to see if input is a number
-    if(char_select.isdigit()):
+    elif(char_select.isdigit()):
         int_char = int(char_select) 
         # Check to see if valid option
         if(int_char >=1 and int_char <= 9):
@@ -170,7 +169,8 @@ ______ _   ___________________ _____ _____ _____ _____ _____ _   _ _
                                 
         """)
 else:
-    print("""          .-.
+    print("""          
+                       .-.
                       |_:_|
                      /(_Y_)\\
 .                   ( \/M\/ )
